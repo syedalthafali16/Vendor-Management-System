@@ -55,4 +55,5 @@ This project helped in understanding:
 ### 👨‍💻 Author
 
 **Syed Althaf Ali**
+
 Built as a beginner full-stack practice project.
