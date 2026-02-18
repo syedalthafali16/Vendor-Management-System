@@ -1,190 +1,194 @@
 :root {
-    --primary: #667eea;
-    --secondary: #764ba2;
-    --bg: #0f172a;
-    --card-bg: rgba(255,255,255,0.05);
-    --border: rgba(255,255,255,0.1);
-    --text: #f1f5f9;
-    --muted: #94a3b8;
+    --bg-dark: #0f172a;
+    --sidebar-bg: #1e293b;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --accent: #8b5cf6;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
     --danger: #ef4444;
-    --radius: 12px;
-    --transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
 }
 
-/* Global */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(135deg,#0f172a,#1e293b);
-    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
+}
+
+.app-container {
+    display: flex;
     min-height: 100vh;
 }
 
-/* Header */
-.glass {
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.05);
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    padding: 24px;
 }
 
-.app-header {
-    padding: 20px;
-    text-align: center;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo-icon {
+    background: var(--primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* Main */
+.main-content {
+    flex: 1;
+}
+
+.top-bar {
+    padding: 25px 40px;
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-.app-header h1 {
-    font-weight: 200;
-    font-size: 22px;
+.content-wrapper {
+    padding: 40px;
 }
 
-/* Layout */
-.dashboard {
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px;
+.grid-layout {
     display: grid;
-    gap: 25px;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
 }
 
+/* Card */
 .card {
     background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 25px;
-    transition: var(--transition);
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header i {
+    color: var(--primary);
 }
 
 /* Form */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+.input-group {
+    margin-bottom: 20px;
 }
 
-.form-group {
-    width: 100%;
-}
-
-.form-group label {
-    margin-bottom: 10px;
+.input-group label {
     display: block;
-    font-weight: 500;
-    color: var(--text);
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-/* FULL WIDTH INPUT */
-input {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: var(--radius);
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid var(--border);
-    background: rgba(255,255,255,0.05);
-    color: white;
-    font-size: 16px;
-    transition: var(--transition);
+    padding: 12px 16px;
+    border-radius: 10px;
 }
 
-input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 12px rgba(102,126,234,0.7);
-    transform: scale(1.02);
-}
-
-input::placeholder {
-    color: var(--muted);
-}
-
-/* Buttons */
-.btn-primary {
-    background: linear-gradient(135deg,var(--primary),var(--secondary));
+.input-wrapper input {
+    background: none;
     border: none;
-    padding: 14px;
-    border-radius: var(--radius);
     color: white;
+    outline: none;
+    width: 100%;
+}
+
+/* YOUR BUTTON DESIGN */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
 }
 
 .btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(102,126,234,0.6);
-}
-
-.btn-danger {
-    background: var(--danger);
-    padding: 8px 12px;
-    border-radius: var(--radius);
-    color: white;
-    transition: var(--transition);
-}
-
-.btn-danger:hover {
-    background: #b91c1c;
-    transform: scale(1.1);
+    background: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
 /* Table */
-.vendor-table {
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.vendor-table th, .vendor-table td {
+th, td {
     padding: 14px;
     border-bottom: 1px solid var(--border);
 }
 
-.vendor-table th {
-    text-align: left;
-    color: var(--muted);
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
 }
 
-.vendor-row {
-    transition: var(--transition);
-}
-
-.vendor-row:hover {
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-decoration: none;
     background: rgba(255,255,255,0.05);
-    transform: scale(1.01);
+    transition: 0.2s;
 }
 
-/* Animation */
-.fade-in {
-    animation: fade 0.4s ease-in;
+.edit:hover {
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.1);
 }
 
-@keyframes fade {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+.delete:hover {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
 }
 
-/* Empty State */
-.empty-card {
-    text-align: center;
-    color: var(--muted);
-    padding: 30px;
-}
-
-.empty-card i {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .dashboard {
-        padding: 15px;
+@media (max-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none;
     }
 }
