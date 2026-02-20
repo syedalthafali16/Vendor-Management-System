@@ -1,7 +1,7 @@
 # 🏪 Vendor Management System
 
 A simple web-based Vendor Management System built using **Python Flask**.  
-This project allows users to add, view, and delete vendors with a modern UI.
+This project allows users to add, view, update, and delete vendors with a modern UI.
 
 ---
 
@@ -9,6 +9,7 @@ This project allows users to add, view, and delete vendors with a modern UI.
 
 ✔ Add new vendors  
 ✔ View vendor list  
+✔ Update vendors
 ✔ Delete vendors  
 ✔ Data stored using JSON file  
 ✔ Modern responsive UI  
