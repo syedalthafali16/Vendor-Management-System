@@ -9,7 +9,7 @@ This project allows users to add, view, update, and delete vendors with a modern
 
 ✔ Add new vendors  
 ✔ View vendor list  
-✔ Update vendors
+✔ Update vendors   
 ✔ Delete vendors  
 ✔ Data stored using JSON file  
 ✔ Modern responsive UI  
